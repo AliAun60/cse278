@@ -1,0 +1,141 @@
+<!-- This file contains the html file for Product And Payment Query.
+Displays a form with a dropdown menu to select an office code.
+Allows users to select an office code and submit the form to perform a query.
+Copyright (c) Ali Aun Haider, DEC 2023  --> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Query Form</title>
+    <style>
+        /* General styling for the entire page */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Styling for tables */
+        table {
+            background-color: #fff;
+            border-spacing: 2px;
+            border-collapse: separate;;
+            width: 80%;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd; /* Add a bit of border to each cell */
+        }
+
+        th, td {
+            padding: 15px; /* Increase padding for better readability */
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db;
+            color: #fff;
+            font-weight: bold; /* Bold font for header cells */
+        }
+
+        /* Styling for titles */
+        .title {
+            color: #3498db;
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        /* Styling for navigation links */
+        .nav-links {
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+            float: right;
+            margin: 10px;
+            padding: 10px 10px;
+            border-radius: 5px;
+            background-color: #3498db;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links:hover {
+            background-color: #2980b9;
+        }
+
+        /* Styling for form elements */
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="submit"] {
+            padding: 12px;
+            margin: 5px;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Table for the title -->
+    <table>
+        <tr>
+            <td>
+                <!-- Title for the page -->
+                <p class="title">Customer and Order Management</p>
+                <!-- Navigation links -->
+                <p class="nav-links"> 
+                    <a href="http://os1.csi.miamioh.edu/~haidera/" class="nav-links">QueryPage</a>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Form for querying -->
+    <form action="./cgi-bin/totalPayments.cgi" method="POST">
+        <fieldset>
+            <legend>Available Attributes</legend>
+            <!-- Dropdown for selecting an office code -->
+            <label for="dropdown">Select an Office Code: </label>
+            <select id="dropdown" name="dropdown">
+                <option value="0"></option>
+                <option value="1">1 - USA(San Francisco)</option>
+                <option value="2">2 - USA(Boston)</option>
+                <option value="3">3 - USA(NYC)</option>
+                <option value="4">4 - France(Paris)</option>
+                <option value="5">5 - Japan(Tokyo)</option>
+                <option value="6">6 - Australia(Sydney)</option>
+                <option value="7">7 - UK(London)</option>
+            </select>
+            <!-- Submit button -->
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+</body>
+</html>

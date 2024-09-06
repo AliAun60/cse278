@@ -1,0 +1,180 @@
+<!-- This file contains the html file for Inquire Order Details Query Page.
+Copyright (c) Ali Aun Haider, DEC 2023 --> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        table {
+            background-color: #fff;
+            border-spacing: 2px;
+            border-collapse: separate;;
+            width: 80%;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd; 
+        }
+
+        th, td {
+            padding: 15px; 
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db;
+            color: #fff;
+            font-weight: bold; 
+        }
+
+        .title {
+            color: #3498db;
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .nav-links {
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+        float: right;
+        margin: 10px;
+        padding: 10px 10px;
+        border-radius: 5px;
+        background-color: #3498db;
+        transition: background-color 0.3s ease;
+        }
+
+        .nav-links:hover {
+            background-color: #2980b9;
+            
+        }
+
+        .content {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+            max-height: 500px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="submit"] {
+            padding: 12px;
+            margin: 5px;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        #resultTable {
+            margin-top: 20px;
+            width: 80%;
+            height: 400px;
+            overflow: auto;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>  
+    <table>
+        <tr>
+            <td>
+                <p class="title">Customer and Order Management</p>
+                <p class="nav-links"> 
+                    <a href="http://os1.csi.miamioh.edu/~haidera/" class="nav-links">QueryPage</a>
+                </p>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <p>Please Enter Country Name To Inquire About Order(s):</p>   
+    <form id="getTotalOrdersForm" action="./cgi-bin/getTotalOrders.cgi" method="POST">
+        <input type="text" id="search_text" name="search_text"> 
+        <input type="submit" value="Search" />
+    </form>
+
+    <div id="resultTable"></div>
+
+    <script>
+        document.getElementById("getTotalOrdersForm").addEventListener("submit", function (event) {
+            // Prevent the default form submission
+            event.preventDefault();
+    
+            // Get the value from the search_text input
+            var searchTextValue = document.getElementById("search_text").value;
+    
+            // Log the value to the console (for debugging purposes)
+            console.log(searchTextValue);
+    
+            // Perform AJAX request to get CGI script results
+            var xhr = new XMLHttpRequest();
+            var url = "./cgi-bin/getTotalOrders.cgi";
+            var params = "search_text=" + encodeURIComponent(searchTextValue);
+            xhr.open("POST", url, true);
+    
+            // Handle the response from the server
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    // Update the resultTable div with the obtained HTML results
+                    document.getElementById("resultTable").innerHTML = xhr.responseText;
+                }
+            };
+    
+            // Send the AJAX request with parameters
+            xhr.send(params);
+        });
+    </script>
+</body>
+</html>

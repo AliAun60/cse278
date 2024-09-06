@@ -1,0 +1,166 @@
+<!-- Displays the home page for the Customer Orders Application.
+Provides navigation links to other pages and options for querying orders.
+Includes an image related to Orders Report for visual appeal.
+Copyright (c) Ali Aun Haider, DEC 2023 -->  
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* General styling for the entire page */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Styling for tables */
+        table {
+            background-color: #fff;
+            border-spacing: 2px;
+            border-collapse: separate;;
+            width: 80%;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd; 
+        }
+
+        th, td {
+            padding: 15px; 
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db;
+            color: #fff;
+            font-weight: bold; 
+        }
+
+        /* Styling for titles */
+        .title {
+            color: #3498db;
+            text-align: center;
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        /* Styling for navigation links */
+        .nav-links {
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+            float: right;
+            margin: 10px;
+            padding: 10px 10px;
+            border-radius: 5px;
+            background-color: #3498db;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links:hover {
+            background-color: #2980b9;
+        }
+
+        /* Styling for content paragraphs */
+        .content {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        /* Styling for form elements */
+        form {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        img { 
+            max-width: 100%; 
+            height: auto; 
+            border-radius: 10px; 
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+            margin: 20px 0; 
+            max-height: 500px; 
+        } 
+        
+        p { 
+            font-size: 18px; 
+            line-height: 1.5; 
+            color: #555; 
+        }
+        
+        input[type="text"],
+        input[type="submit"] {
+            padding: 12px;
+            margin: 5px;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        /* Styling for result table */
+        #resultTable {
+            margin-top: 20px;
+            width: 80%;
+            height: 400px;
+            overflow: auto;
+        }
+
+        /* Styling for buttons container */
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Table for the title -->
+    <table>
+        <tr>
+            <td>
+                <!-- Title for the page -->
+                <p class="title">Customer Orders Application</p>
+                <!-- Navigation links -->
+                <p class="nav-links"> 
+                    <a href="./about.html" class="nav-links">About</a>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Page content -->
+    <p>
+        Here are the options for querying Orders! 
+    </p>
+    <p> 1. <a href="./customersList.html">Inquire Order Details.</a></p>
+    <p> 2. <a href="./customerCode.html">Product And Payment Query.</a></p>
+
+    <hr>
+
+    <!-- Image related to Orders Report -->
+    <img src="https://blog.happyfox.com/wp-content/uploads/2020/10/Customer-Service-Vs-Customer-Support-Vs-Customer-Success.png" alt="Orders Report">
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!-- This file contains the about page for the Customer Application.
+Provides an overview of the application, its objectives, and tables used.
+Copyright (c) Ali Aun Haider, DEC 2023 --> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        table {
+            background-color: #fff;
+            border-spacing: 2px;
+            border-collapse: separate;
+            width: 80%;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .title {
+            color: #3498db;
+            text-align: center;
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .nav-links {
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+            float: right;
+            margin: 10px;
+            padding: 10px 10px;
+            border-radius: 5px;
+            background-color: #3498db;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links:hover {
+            background-color: #2980b9;
+        }
+
+        .content {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        form {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="submit"] {
+            padding: 12px;
+            margin: 5px;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        #resultTable {
+            margin-top: 20px;
+            width: 80%;
+            height: 400px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Table for the title -->
+    <table>
+        <tr>
+            <td>
+                <!-- Title for the page -->
+                <p class="title">About</p>
+                <p class="nav-links"> 
+                    <a href="./index.html" class="nav-links">Query Page</a>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Page content -->
+    <p><strong>Application Overview:</strong></p>
+
+    <p>
+        <strong>Objective:</strong>
+        The application aims to facilitate the management of customer orders by providing a user-friendly interface to query and display relevant information. 
+        <br> It connects to a MySQL database and executes SQL queries to retrieve and present data related to customers, orders, payments, and products. 
+        <br>The primary goal is to enable users to inquire about specific attributes related to customer orders.
+    </p>
+    <p><strong>Table Used And Queries:</strong></p>
+    <ul>
+        <li>    Offices</strong><br></li>
+        <li>    Employees</strong><br></li>
+        <li>    Customers</strong><br></li>
+        <li>    Payments</strong><br></li>
+        <li>    Orders</strong><br></li>
+        <li>    OrderDetails</strong><br></li>
+        <li>    Products</strong><br></li>
+        <br>
+
+        <li>    
+            <strong>Order Inquire Details Query:</strong>
+            <br>
+            <em>Description:</em> Generates the summary of the order Date and Order Number and their status along with their name and full address.
+            <br>
+            <br>
+        </li>
+        <li>
+            <strong>Product And Payment Query:</strong>
+            <br>
+            <em>Description:</em> Retrieve a list of customers who have paid the Amount for the orders placed, along with their Customer Number and Name, Payment Amount and Date, and the product Bought.
+        </li>
+</body>
+</html>
