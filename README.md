@@ -1,40 +1,49 @@
-# CSE 278 – Code & Mini-Projects
+# Customer Orders App
 
-Welcome! 👋  
-This repository is a collection of small programs and web pages I built while learning systems/software fundamentals. It’s meant to be **easy to browse** and **easy to run**.
-
-## 🔎 What’s inside
-- Short C++ utilities (I/O, files, simple algorithms)
-- Simple web pages (HTML/CSS/JS) used for basic front-end practice
-- Clear run instructions for each item
-
-> Tip: Jump to **[How to Run](#-how-to-run)** and **[Project Index](#-project-index)**.
+A lightweight web + C++ application for **managing customer orders, payments, and products** using a MySQL backend.  
+It provides a simple HTML interface connected to C++ CGI programs that query and display results dynamically.
 
 ---
 
-## 🧭 Project Index
+## 🔎 Overview
+- Query **orders by country** (date, number, customer name, status, address).
+- Retrieve **customer payments and products** filtered by office code.
+- View structured results in clean HTML tables.
+- Backend powered by **C++** + **MySQL++** library.  
+- Frontend built with **HTML + CSS** for navigation and forms.
 
-| Area | Name / Folder | What it demonstrates | How to try it |
-|---|---|---|---|
-| C++ | `cpp/total_payments/` | File reading + aggregate totals | `g++ main.cpp -o total_payments && ./total_payments` |
-| C++ | `cpp/get_total_orders/` | Parsing input + counting | `g++ main.cpp -o get_total_orders && ./get_total_orders` |
-| Web | `web/index.html` | Simple static page | Open in browser |
-| Web | `web/customers/` | List + basic layout | Open `web/customers/index.html` |
+---
 
-> If your files are currently in the root, consider moving them into `cpp/...` and `web/...` folders like above. (See **Repo structure** below.)
+## 🗂️ Features
+- **Orders Inquiry**: Enter a country to view orders placed, customer names, and order statuses.  
+- **Payments Query**: Select an office code to get customer payments, dates, and product details.  
+- **About Page**: Explains the objectives and tables used in the system.  
+- **Home Page**: Simple navigation with links to all queries.
 
 ---
 
 ## 🚀 How to Run
 
-### Prereqs
-- **C++:** any modern compiler (GCC/Clang/MSVC)
-- **Web:** any browser (Chrome/Firefox/Edge)
-- **Optional:** VS Code + C/C++ extension
+### Requirements
+- A web server that supports **CGI** (e.g., Apache with CGI enabled).  
+- **MySQL** database with tables: Offices, Employees, Customers, Payments, Orders, OrderDetails, Products.  
+- **mysql++** C++ connector installed.  
+- C++17 or newer compiler.
 
-### C++ (example)
-```bash
-# from repo root
-cd cpp/total_payments
-g++ main.cpp -o total_payments
-./total_payments   # Windows: .\total_payments.exe
+### Setup
+1. Clone this repo:
+   ```bash
+   git clone https://github.com/AliAun60/customer-orders-app.git
+   cd customer-orders-app
+
+Configure your database connection inside the C++ files (getTotalOrders.cpp, totalPayments.cpp, OfficeCode.cpp) if needed.
+g++ -o cgi-bin/getTotalOrders.cgi getTotalOrders.cpp -lmysqlpp
+g++ -o cgi-bin/totalPayments.cgi totalPayments.cpp -lmysqlpp
+g++ -o cgi-bin/OfficeCode.cgi OfficeCode.cpp -lmysqlpp
+
+
+Place the compiled .cgi files in your server’s cgi-bin directory.
+
+Serve the .html files (index.html, customersList.html, customerCode.html, about.html) via your web server.
+
+Open index.html in your browser and start querying 🎉.
